@@ -1,6 +1,5 @@
 'use client'
 
-import Button from '@/components/Button'
 import Input from '@/components/Input'
 import InputError from '@/components/InputError'
 import Label from '@/components/Label'
@@ -9,6 +8,7 @@ import { useAuth } from '@/hooks/auth'
 import { useEffect, useState } from 'react'
 import { useRouter } from 'next/navigation'
 import AuthSessionStatus from '@/app/(auth)/AuthSessionStatus'
+import { Button } from 'antd'
 
 const Login = () => {
     const router = useRouter()
@@ -106,14 +106,23 @@ const Login = () => {
                     </label>
                 </div>
 
-                <div className="flex items-center justify-end mt-4">
+                <div className="flex flex-col mt-4">
                     <Link
                         href="/forgot-password"
                         className="underline text-sm text-gray-600 hover:text-gray-900">
                         Forgot your password?
                     </Link>
 
-                    <Button className="ml-3">Login</Button>
+
+                    <Button
+                        className='mt-3'
+                        size='large'
+                        type='primary'
+                        block
+                        htmlType='submit'
+                    >
+                        Login
+                    </Button>
                 </div>
             </form>
         </>

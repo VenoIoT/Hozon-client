@@ -1,12 +1,12 @@
 'use client'
 
-import Button from '@/components/Button'
 import Input from '@/components/Input'
 import InputError from '@/components/InputError'
 import Label from '@/components/Label'
 import Link from 'next/link'
 import { useAuth } from '@/hooks/auth'
 import { useState } from 'react'
+import { Button } from 'antd'
 
 const Page = () => {
     const { register } = useAuth({
@@ -107,14 +107,23 @@ const Page = () => {
                 />
             </div>
 
-            <div className="flex items-center justify-end mt-4">
+            <div className="flex flex-col mt-4">
                 <Link
                     href="/login"
                     className="underline text-sm text-gray-600 hover:text-gray-900">
                     Already registered?
                 </Link>
 
-                <Button className="ml-4">Register</Button>
+             
+                <Button
+                    className='mt-3'
+                    size='large'
+                    type='primary'
+                    block
+                    htmlType='submit'
+                >
+                    Register
+                </Button>
             </div>
         </form>
     )

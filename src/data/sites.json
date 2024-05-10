@@ -1,0 +1,72 @@
+[
+    {
+        "id": 1,
+        "url": "https://www.example1.com",
+        "title": "Example 1",
+        "password": "password1",
+        "note": "This is a note for Example 1."
+    },
+    {
+        "id": 2,
+        "url": "https://www.example2.com",
+        "title": "Example 2",
+        "password": "password2",
+        "note": "This is a note for Example 2."
+    },
+    {
+        "id": 3,
+        "url": "https://www.example3.com",
+        "title": "Example 3",
+        "password": "password3",
+        "note": "This is a note for Example 3."
+    },
+    {
+        "id": 4,
+        "url": "https://www.example4.com",
+        "title": "Example 4",
+        "password": "password4",
+        "note": "This is a note for Example 4."
+    },
+    {
+        "id": 5,
+        "url": "https://www.example5.com",
+        "title": "Example 5",
+        "password": "password5",
+        "note": "This is a note for Example 5."
+    },
+    {
+        "id": 6,
+        "url": "https://www.example6.com",
+        "title": "Example 6",
+        "password": "password6",
+        "note": "This is a note for Example 6."
+    },
+    {
+        "id": 7,
+        "url": "https://www.example7.com",
+        "title": "Example 7",
+        "password": "password7",
+        "note": "This is a note for Example 7."
+    },
+    {
+        "id": 8,
+        "url": "https://www.example8.com",
+        "title": "Example 8",
+        "password": "password8",
+        "note": "This is a note for Example 8."
+    },
+    {
+        "id": 9,
+        "url": "https://www.example9.com",
+        "title": "Example 9",
+        "password": "password9",
+        "note": "This is a note for Example 9."
+    },
+    {
+        "id": 10,
+        "url": "https://www.example10.com",
+        "title": "Example 10",
+        "password": "password10",
+        "note": "This is a note for Example 10."
+    }
+]

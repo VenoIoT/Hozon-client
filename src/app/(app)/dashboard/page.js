@@ -1,22 +1,30 @@
-import Header from '@/app/(app)/Header'
+import Credentials from '@/components/Credentials'
+import { FloatButton } from 'antd'
+import { BsPencilSquare } from 'react-icons/bs'
 
 export const metadata = {
-    title: 'Laravel - Dashboard',
+    title: 'Hozon - Dashboard',
 }
 
 const Dashboard = () => {
     return (
         <>
-            <Header title="Dashboard" />
-            <div className="py-12">
-                <div className="max-w-7xl mx-auto sm:px-6 lg:px-8">
-                    <div className="bg-white overflow-hidden shadow-sm sm:rounded-lg">
-                        <div className="p-6 bg-white border-b border-gray-200">
-                            You are logged in!
-                        </div>
-                    </div>
+            <main>
+                <Credentials
+                // title="Securely store and manage passwords for various accounts and services."
+                />
+
+
+                <div className='lg:hidden'>
+                    <FloatButton
+                        icon={<BsPencilSquare size={20} />}
+                        type="default"
+                        style={{
+                            right: 36,
+                        }}
+                    />
                 </div>
-            </div>
+            </main>
         </>
     )
 }
