@@ -16,6 +16,7 @@ export default function Credentials({ title }) {
     return (
         <Card
             title={title}
+            bordered={false}
         >
             {activeComponent === 1 && <SiteDetailsLists handleItemClick={handleItemClick} />}
             {activeComponent === 2 && <CredentialDetails handleItemClick={handleItemClick} selectedSite={selectedSite} />}

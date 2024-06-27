@@ -1,6 +1,7 @@
-import React, { useState } from 'react'
+import React from 'react'
 import sites from '@/data/sites.json'
-import { BsChevronRight, BsGlobeAmericas } from 'react-icons/bs'
+import { FcPrivacy } from "react-icons/fc";
+import { BsChevronRight } from 'react-icons/bs';
 
 export default function SiteDetailsLists({ handleItemClick }) {
 
@@ -15,10 +16,10 @@ export default function SiteDetailsLists({ handleItemClick }) {
                     >
                         <div className='flex items-center justify-between'>
                             <div className='flex items-center space-x-4'>
-                                <BsGlobeAmericas size={18} />
+                                <FcPrivacy size={18} />
                                 <div>
-                                    <div>{site.title}</div>
-                                    <div>{site.url}</div>
+                                    <p>{site.title}</p>
+                                    <p className='text-sm'>{site.url}</p>
                                 </div>
                             </div>
 

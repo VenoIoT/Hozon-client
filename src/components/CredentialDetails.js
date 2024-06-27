@@ -111,9 +111,9 @@ export default function CredentialDetails({ handleItemClick, selectedSite }) {
                         </div>
 
                         <div className='space-y-1 text-xs'>
-                            <label htmlFor="password">Credential</label>
+                            <label htmlFor="password2">Credential</label>
                             <div className="flex items-center space-x-2">
-                                <Input.Password id='password' name='password' size='large' value={selectedSite.password} />
+                                <Input.Password id='password2' name='password2' size='large' value={selectedSite.password} />
                                 <div
                                     className='border p-2 rounded-md hover:bg-gray-100 hover:cursor-pointer text-gray-400 hover:text-gray-900 active:scale-90'>
                                     <BsCopy size={20} onClick={copyPasswordToClipboard} />

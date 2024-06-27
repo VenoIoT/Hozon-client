@@ -3,14 +3,11 @@
 import { useAuth } from '@/hooks/auth'
 import Navigation from '@/app/(app)/Navigation'
 import Loading from '@/app/(app)/Loading'
-import Lorem1000 from '@/components/Lorem1000'
-import { BsGear, BsPen } from 'react-icons/bs'
-import { Button } from 'antd'
+import { BsGear } from 'react-icons/bs'
 import SideTopBar from '@/components/SideTopBar'
-import Link from 'next/link'
 import FoldersList from '@/components/folders/FoldersList'
 
-const AppLayout = ({ children, header }) => {
+const AppLayout = ({ children }) => {
     const { user } = useAuth({ middleware: 'auth' })
 
     if (!user) {

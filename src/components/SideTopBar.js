@@ -82,7 +82,7 @@ export default function SideTopBar({ footer }) {
                 </form>
             </AntModal>
 
-            <div className='px-4 pt-4 pb-2 sticky top-0 bg-white shadow'>
+            <div className='px-4 pt-4 pb-2 sticky top-0 bg-white shadow z-50'>
                 <div className='flex items-center justify-between'>
                     <div className='flex items-center space-x-4'>
                         <BsGem size={20} />

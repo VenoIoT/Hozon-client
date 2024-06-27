@@ -1,69 +1,57 @@
-import Link from 'next/link'
-import React from 'react'
-import { BsFolder } from 'react-icons/bs'
+// 'use server'
+
+import axios from '@/lib/axios';
+import { useQuery } from '@tanstack/react-query';
+import { Button, Skeleton } from 'antd';
+import { FcFolder } from "react-icons/fc";
 
 export default function FoldersList() {
-  return (
-      <div className=' flex flex-col space-y-1'>
-          <Link href="/dashboard" className='flex items-center space-x-2 hover:bg-gray-100 p-3 rounded-xl'>
-              <BsFolder size={18} />
-              <div>Passwords</div>
-          </Link>
+    const { isPending, error, data } = useQuery({
+        queryKey: ['getCategories'],
+        queryFn: async () =>
+            await axios.get('/api/v1/categories', {
+                headers: {
+                    'Content-Type': 'application/json',
+                    Accept: 'application/json'
+                },
+            }),
+    })
 
-          <Link href="/apikeys" className='flex items-center space-x-2 hover:bg-gray-100 p-3 rounded-xl'>
-              <BsFolder size={18} />
-              <div>API keys</div>
-          </Link>
+    if (isPending) {
+        <div className='m-4'>
+            hjhhjh
+            <Skeleton />
+        </div>
+    }
 
-          <Link href="/encryption" className='flex items-center space-x-2 hover:bg-gray-100 p-3 rounded-xl'>
-              <BsFolder size={18} />
-              <div>Encryption Keys</div>
-          </Link>
+    if (error) {
+        <div>
+            <p>Error{error.message}</p>
+        </div>
+        console.log("Massive error", error.message);
+    }
 
-          <Link href="/certificates" className='flex items-center space-x-2 hover:bg-gray-100 p-3 rounded-xl'>
-              <BsFolder size={18} />
-              <div>Certificates</div>
-          </Link>
+    const credentialCategories = data?.data?.response;
 
-          <Link href="/sshkeys" className='flex items-center space-x-2 hover:bg-gray-100 p-3 rounded-xl'>
-              <BsFolder size={18} />
-              <div>SSH Keys</div>
-          </Link>
+    return (
 
-          <Link href="/database" className='flex items-center space-x-2 hover:bg-gray-100 p-3 rounded-xl'>
-              <BsFolder size={18} />
-              <div>Database Credentials</div>
-          </Link>
+        <div>
+            {credentialCategories?.map(credential => (
+                <div className='my-2' key={credential.id}>
+                    <Button
+                        block={true}
+                        type='text'
+                        size='large'
 
-          <Link href="/outh" className='flex items-center space-x-2 hover:bg-gray-100 p-3 rounded-xl'>
-              <BsFolder size={18} />
-              <div>OAuth Tokens</div>
-          </Link>
+                    >
+                        <div className='flex items-center space-x-3'>
+                            <FcFolder size={20} />
+                            <p className='flex items-center capitalize text-sm'>{credential.category}</p>
+                        </div>
+                    </Button>
+                </div>
+            ))}
+        </div>
 
-          <Link href="/tokens" className='flex items-center space-x-2 hover:bg-gray-100 p-3 rounded-xl'>
-              <BsFolder size={18} />
-              <div>Tokens and Secrets</div>
-          </Link>
-
-          <Link href="/configuration" className='flex items-center space-x-2 hover:bg-gray-100 p-3 rounded-xl'>
-              <BsFolder size={18} />
-              <div>Configuration Files</div>
-          </Link>
-
-          <Link href="/digitalcerts" className='flex items-center space-x-2 hover:bg-gray-100 p-3 rounded-xl'>
-              <BsFolder size={18} />
-              <div>Digital Certificates</div>
-          </Link>
-
-          <Link href="/accesscodes" className='flex items-center space-x-2 hover:bg-gray-100 p-3 rounded-xl'>
-              <BsFolder size={18} />
-              <div>Access Codes</div>
-          </Link>
-
-          <Link href="/licensekeys" className='flex items-center space-x-2 hover:bg-gray-100 p-3 rounded-xl'>
-              <BsFolder size={18} />
-              <div>License Keys</div>
-          </Link>
-    </div>
-  )
+    )
 }

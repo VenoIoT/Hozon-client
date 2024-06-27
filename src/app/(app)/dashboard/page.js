@@ -10,10 +10,7 @@ const Dashboard = () => {
     return (
         <>
             <main>
-                <Credentials
-                // title="Securely store and manage passwords for various accounts and services."
-                />
-
+                <Credentials />
 
                 <div className='lg:hidden'>
                     <FloatButton
