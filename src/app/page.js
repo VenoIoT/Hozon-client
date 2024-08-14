@@ -9,8 +9,6 @@ const Home = () => {
         <>
             <div className="relative flex items-top justify-center min-h-screen bg-gray-100 sm:items-center sm:pt-0">
                 <LoginLinks />
-
-                
             </div>
         </>
     )

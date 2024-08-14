@@ -6,7 +6,7 @@ import { Button, Skeleton } from 'antd';
 import { FcFolder } from "react-icons/fc";
 
 export default function FoldersList() {
-    const { isPending, error, data } = useQuery({
+    const { isLoading, error, data } = useQuery({
         queryKey: ['getCategories'],
         queryFn: async () =>
             await axios.get('/api/v1/categories', {
@@ -17,9 +17,8 @@ export default function FoldersList() {
             }),
     })
 
-    if (isPending) {
-        <div className='m-4'>
-            hjhhjh
+    if (isLoading) {
+        <div className="m-4">
             <Skeleton />
         </div>
     }
@@ -32,6 +31,9 @@ export default function FoldersList() {
     }
 
     const credentialCategories = data?.data?.response;
+    
+    console.log(credentialCategories);
+    
 
     return (
 
